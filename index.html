@@ -12,15 +12,206 @@
     <meta name='og:image' content=''>
 
     <title>Portfolio</title>
-    <link rel='stylesheet' href='css/style.css'>
     <link rel='shortcut icon' href='' type='image/x-icon'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel='stylesheet' href='css/style.css'>
 </head>
 
 <body>
 
-    `
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark text-white">
+        <div class="container-fluid">
+            <!-- visible navbar -->
+            <a href="#" class="navbar-brand text-white mb-0 h1">Kevin Volkel</a>
+            <button class="bg-dark text-white navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-expanded="false">BUNGER</button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a href="#landing" class="nav-link active text-white">LANDING</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link active text-white">SKILLS</a></li>
+                    <li class="nav-item"><a href="#resume" class="nav-link active text-white">RESUME</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link active text-white">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <section id="landing">
+        <div class="landing-container">
+            <h1>Kevin Volkel</h1>
+            <h2>Something about you,your job, and/or where you live.</h2>
+        </div>
+    </section>
+
+    <div class="skills container" id="skills">
+        <div class="section-title">
+            <h2>Skills</h2>
+        </div>
+
+        <div class="row skills-content">
+            <div class="col-lg-6">
+                <div class="progress">
+                    <span class="skill">HTML <i class="val">80%</i></span>
+                    <div class="progress-bar-wrap">
+                    <div class="progress-bar" style="width: 80%"></div>
+                    </div>
+                    <div class="projects-container">
+                        <p class="projects-header">HTML Projects</p>
+                        <ul>
+                            <li><a href="#" class="project">Project 1</a></li>
+                            <li><a href="#" class="project">Project 2</a></li>
+                            <li><a href="#" class="project">Project 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="progress">
+                    <span class="skill">CSS <i class="val">70%</i></span>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar" style="width: 70%"></div>
+                    </div>
+                    <div class="projects-container">
+                        <p class="projects-header">CSS Projects</p>
+                        <ul>
+                            <li><a href="#" class="project">Project 1</a></li>
+                            <li><a href="#" class="project">Project 2</a></li>
+                            <li><a href="#" class="project">Project 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="progress">
+                    <span class="skill">JS <i class="val">60%</i></span>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar" style="width: 60%"></div>
+                    </div>
+                    <div class="projects-container">
+                        <p class="projects-header">JS Projects</p>
+                        <ul>
+                            <li><a href="#" class="project">Project 1</a></li>
+                            <li><a href="#" class="project">Project 2</a></li>
+                            <li><a href="#" class="project">Project 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="progress">
+                    <span class="skill">Bootstrap <i class="val">30%</i></span>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar" style="width: 30%"></div>
+                    </div>
+                    <div class="projects-container">
+                        <p class="projects-header">Bootstrap Projects</p>
+                        <ul>
+                            <li><a href="#" class="project">Project 1</a></li>
+                            <li><a href="#" class="project">Project 2</a></li>
+                            <li><a href="#" class="project">Project 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="progress">
+                    <span class="skill">SASS <i class="val">70%</i></span>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar" style="width: 70%"></div>
+                    </div>
+                    <div class="projects-container">
+                        <p class="projects-header">SASS Projects</p>
+                        <ul>
+                            <li><a href="#" class="project">Project 1</a></li>
+                            <li><a href="#" class="project">Project 2</a></li>
+                            <li><a href="#" class="project">Project 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="progress">
+                    <span class="skill">jQuery <i class="val">50%</i></span>
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar" style="width: 50%"></div>
+                    </div>
+                    <div class="projects-container">
+                        <p class="projects-header">JQUERY Projects</p>
+                        <ul>
+                            <li><a href="#" class="project">Project 1</a></li>
+                            <li><a href="#" class="project">Project 2</a></li>
+                            <li><a href="#" class="project">Project 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="resume" id="resume">
+        <div class="container">
+            <div class="section-title">
+                <h2>Resume</h2>
+                <p>Check My Resume</p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="resume-title">Summary / Cover Letter</h3>
+                    <div class="resume-item pb-0">
+                        <h4>Kevin Volkel</h4>
+                        <p><em>A brief description about yourself and what you want to get out of your job. Talk about strengths and experience.</em></p>
+                        <p>
+                            <ul>
+                                <li>Street Address</li>
+                                <li>Phone Number</li>
+                                <li>E-Mail</li>
+                            </ul>
+                        </p>
+                    </div>
+                    
+                    <h3 class="resume-title">Education</h3>
+                    <div class="resume-item">
+                        <h4>What degree you graduated with?</h4>
+                        <h5>Graduation Year</h5>
+                        <p><em>Where you graduated from</em></p>
+                        <p>Awards, Honors, general information about your time</p>
+                    </div>
+
+                    <div class="resume-item">
+                        <h4>What degree you graduated with?</h4>
+                        <h5>Graduation Year</h5>
+                        <p><em>Where you graduated from</em></p>
+                        <p>Awards, Honors, general information about your time</p>
+                    </div>
+                    <!-- Add More As Needed -->
+                </div>
+
+                <div class="col-lg-6">
+
+                    <h3 class="resume-title">Certification</h3>
+                    <div class="resume-item">
+                        <h4>Name of the cert</h4>
+                        <h5>Year Obtained</h5>
+                        <p><em>Company that provides cert</em></p>
+                    </div>
+                    <!-- Add more as needed -->
+
+                    <h3 class="resume-title">Professional Experience</h3>
+                    <div class="resume-item">
+                        <h4>Position at the company</h4>
+                        <h5>Years you worked there</h5>
+                        <p><em>Company and address</em></p> <!-- West Mec in Glendale AZ -->
+                        <ul>
+                            <li>Key Roles</li>
+                            <li>Or Responsibilities</li>
+                            <li>Or Related Skills</li>
+                        </ul>
+                    </div>
+                    <!-- Add More as Needed -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+        
     <script src='https://code.jquery.com/jquery-3.5.1.js' integrity='sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=' crossorigin='anonymous'></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 
