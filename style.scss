@@ -1,3 +1,5 @@
+$color: rgb(27, 27, 27);
+
 *,
 *::after,
 *::before{
@@ -7,15 +9,16 @@
 }
 body{
     font-family: sans-serif;
-    background-color: #040404;
+    background-color: $color;
     color: #ffffff;
     position: relative;
     background: transparent;
+    overflow-x: hidden;
 
     &::before{
         content: "";
         position: fixed;
-        background: #040404 top right no-repeat; //can place a url to an image
+        background: $color top right no-repeat; //can place a url to an image
         background-size: cover;
         left: 0;
         right: 0;
@@ -26,13 +29,17 @@ body{
 }
 
 nav{
-    position: sticky;
+    z-index: 69;
+    position: fixed;
+    width: 100vw;
+    top: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     padding-top: .5rem;
     padding-bottom: .5rem;
+    background-color: rgba(#2c2c2c, 0.9)!important;
 
     .container-fluid{
         display: flex;
@@ -71,6 +78,14 @@ nav{
         align-items: center;
         flex-direction: column;
         padding: 0 15px;
+
+        .picture{
+            width: 250px;
+            height: 250px;
+            border-radius: 125px;
+            background-color: white;
+            border: 5px black solid;
+        }
     }
 
     h1{
@@ -103,62 +118,44 @@ nav{
     &:hover{
         color: orange;
     }
+
+    
 }
 }
+
 
 .skills{
-    .progress{
-        height: 220px;
-        display: block;
-        background: none;
-        border-radius: 0;
-
-        .skill{
-            padding: 10px 0;
-            margin: 0;
-            text-transform: uppercase;
-            display: block;
-            font-size: 25px;
-            font-weight: 500;
-            font-family: sans-serif;
-            color: #fff;
-
-            .val{
-                float: right;
-                font-style: normal;
-            }
-        }
-
-        .projects-container{
-            .projects-header{
-                margin-top: 15px;
-                font-size: 18px;
-            }
-            ul{
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-                li{
-                    list-style: none;
-                    a{
-                        text-decoration: none;
-                        color: #fff;
-                        transition: all 0.5s;
-                        font-size: 1rem;
-                        &:hover{
-                            color: lime;
-                        }
-                    }
-                }
-            }
-        }
+    background-color: #ddd;
+    padding-bottom: 2rem;
+    margin-top: 1rem;
+    .section-title{
+        color: #222
     }
 
-        
-    &:last-of-type{
-        margin-bottom: 4rem;
+    .card{
+        margin: auto;
+        border: solid 10px $color;
+        border-radius: 30px;
+        width: 27rem;
+        margin-top: 2rem;
+        color: #111;
+        .val{
+            color: #444;
+            text-align: center;
+        }
+        .card-link{
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            transition: all 0.5s;
+            &:hover{
+                color: rgb(16, 172, 42);
+            }
+        }
     }
 }
+
+
 
     
 

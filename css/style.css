@@ -9,16 +9,17 @@
 
 body {
   font-family: sans-serif;
-  background-color: #040404;
+  background-color: #1b1b1b;
   color: #ffffff;
   position: relative;
   background: transparent;
+  overflow-x: hidden;
 }
 
 body::before {
   content: "";
   position: fixed;
-  background: #040404 top right no-repeat;
+  background: #1b1b1b top right no-repeat;
   background-size: cover;
   left: 0;
   right: 0;
@@ -28,9 +29,42 @@ body::before {
 }
 
 nav {
-  position: -webkit-sticky;
-  position: sticky;
+  z-index: 69;
+  position: fixed;
+  width: 100vw;
   top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  background-color: rgba(44, 44, 44, 0.9) !important;
+}
+
+nav .container-fluid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #landing {
@@ -73,6 +107,14 @@ nav {
   padding: 0 15px;
 }
 
+#landing .landing-container .picture {
+  width: 250px;
+  height: 250px;
+  border-radius: 125px;
+  background-color: white;
+  border: 5px black solid;
+}
+
 #landing h1 {
   margin: 0 0 10px 0;
   font-size: 64px;
@@ -105,63 +147,40 @@ nav {
   color: orange;
 }
 
-.skills .progress {
-  height: 220px;
-  display: block;
-  background: none;
-  border-radius: 0;
+.skills {
+  background-color: #ddd;
+  padding-bottom: 2rem;
+  margin-top: 1rem;
 }
 
-.skills .progress .skill {
-  padding: 10px 0;
-  margin: 0;
-  text-transform: uppercase;
-  display: block;
-  font-size: 25px;
-  font-weight: 500;
-  font-family: sans-serif;
-  color: #fff;
+.skills .section-title {
+  color: #222;
 }
 
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
+.skills .card {
+  margin: auto;
+  border: solid 10px #1b1b1b;
+  border-radius: 30px;
+  width: 27rem;
+  margin-top: 2rem;
+  color: #111;
 }
 
-.skills .progress .projects-container .projects-header {
-  margin-top: 15px;
-  font-size: 18px;
+.skills .card .val {
+  color: #444;
+  text-align: center;
 }
 
-.skills .progress .projects-container ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 12px;
-}
-
-.skills .progress .projects-container ul li {
-  list-style: none;
-}
-
-.skills .progress .projects-container ul li a {
+.skills .card .card-link {
   text-decoration: none;
-  color: #fff;
+  color: black;
+  font-weight: bold;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  font-size: 1rem;
 }
 
-.skills .progress .projects-container ul li a:hover {
-  color: lime;
-}
-
-.skills:last-of-type {
-  margin-bottom: 4rem;
+.skills .card .card-link:hover {
+  color: #10ac2a;
 }
 
 .progress-bar-wrap {
