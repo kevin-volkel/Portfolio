@@ -1,17 +1,40 @@
 $(function(){
-    let ogOffset = $('.right-card1').offset()
-    console.log(ogOffset)
-    $('.right-card').offset({left: 2000})
-    $('.left-card').offset({right: 2000})
+    $('.right-card').css("left",1500)
+    $('.left-card').css("right",1500)
     let currCard = 1;
-    let scrollTop = 500;
+    let scrollTop = 400;
 
     $(window).scroll(function(){
         if($(this).scrollTop() > scrollTop){
-            $(`.right-card${currCard}`).offset({left: ogOffet.left})
-            $(`.left-card${currCard}`).fadeTo(1000, 1)
+            $(`.right-card${currCard}`).animate({
+                left: 0
+            }, 250)
+            $(`.left-card${currCard}`).animate({
+                right: 0
+            }, 300)
             currCard++;
             scrollTop += 300;
         }
     })
+
+    let previousScroll = 0;
+    let animating = false;
+    $(window).scroll(function(){
+        var currentScroll = $(this).scrollTop();
+        if(!animating){
+            animating = true;
+            if (currentScroll > previousScroll){
+                console.log(`down`)
+                $('nav').slideUp(500)
+            } else {
+                console.log(`up`)
+                $('nav').slideDown(500)
+            }
+            setTimeout(function(){
+                animating = false;
+            }, 500)
+        }
+        
+        previousScroll = currentScroll;
+     });
 })
