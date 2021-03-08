@@ -29,6 +29,7 @@
                     <li class="nav-item"><a href="#landing" class="nav-link active text-white">LANDING</a></li>
                     <li class="nav-item"><a href="#empty-space" class="nav-link active text-white">SKILLS</a></li>
                     <li class="nav-item"><a href="#resume" class="nav-link active text-white">RESUME</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link active text-white">CONTACT</a></li>
                 </ul>
             </div>
         </div>
@@ -48,7 +49,7 @@
     <div id="empty-space"></div>
 
     <div class="skills container" id="skills">
-        <h2 class="section-title">Skills <div class="line"></div></h3>
+        <h2 class="section-title">Skills <div class="line black-to-white"></div></h3>
         <div class="row">
             <div class="col-lg-6">
                 <div class="card left-card left-card1">
@@ -269,35 +270,45 @@
             <div class="row">
                 <div class="col-lg-4 contact-info">
                     <h4 class="contact-header">Email</h4>
-                    <p class="contact-info">somethingSomething@gmail.com</p>
+                    <p class="contact-info">volkelkevin9@gmail.com</p>
                 </div>
                 <div class="col-lg-4 contact-info">
                     <h4 class="contact-header">Phone</h4>
-                    <p class="contact-info">111-111-1111</p>
+                    <p class="contact-info">702-445-2842</p>
                 </div>
                 <div class="col-lg-4 contact-info">
                     <h4 class="contact-header">Address</h4>
                     <p class="contact-info">El Mirage, AZ, 85335</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-6 email-input">
-                    <input type="text" id="name" placeholder="Name">
+            <form action="mailto:volkelkevin9@gmail.com" method="POST" name="email-form">
+                <div class="row">
+                    <div class="col-lg-6 email-input">
+                        <input type="text" id="name" placeholder="Name">
+                    </div>
+                    <div class="col-lg-6 email-input">
+                        <input type="text" id="email" placeholder="E-Mail">
+                    </div>
                 </div>
-                <div class="col-lg-6 email-input">
-                    <input type="text" id="email" placeholder="E-Mail">
+                <div class="row">
+                    <div class="col-lg-12 email-input">
+                        <input type="text" id="subject" placeholder="Subject">
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 email-input">
-                    <input type="text" id="subject" placeholder="Subject">
+                <div class="row">
+                    <div class="col-lg-12 email-input">
+                        <textarea name="email" id="email" placeholder="Body"></textarea>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 email-input">
-                    <textarea name="email" id="email"></textarea>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="buttonContainer">
+                            <button id="send">Send</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </form>
+            
         </div>
     </section>
 

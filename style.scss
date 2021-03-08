@@ -53,6 +53,10 @@ nav{
         align-items: center;
         justify-content: space-between;
     }
+
+    .nav-link:hover{
+        color: lightgrey!important;
+    }
 }
 
 .contact-logo{
@@ -300,26 +304,43 @@ nav{
     .row{
         justify-content: space-around;
     }
+    .email-input{
+        margin: auto;
+        input, textarea{
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        textarea{
+            height: 10rem;
+            resize: none;
+        }
+    }
+
+    .buttonContainer{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+
+        #send{
+            width: 100px;
+            margin: auto;
+            background-color: $bg-color;
+            color: $theme-white;
+            border-radius: 10px;
+        }
+    }
+
 }
 
-.email-input{
-    margin: auto;
-    input, textarea{
-        width: 100%;
-        margin-bottom: 1rem;
-    }
-    textarea{
-        height: 10rem;
-        resize: none;
-    }
-}
+
+
 
 .white-to-black{
-        background: linear-gradient(to right,$theme-white, $bg-color);
-}
-.black-to-white{
-        background: linear-gradient(to right,$bg-color, $theme-white);
-}
+            background: linear-gradient(to right,$theme-white, $bg-color);
+    }
+    .black-to-white{
+            background: linear-gradient(to right,$bg-color, $theme-white);
+    }
 
 ::-webkit-scrollbar{
     width: 10px;
@@ -330,4 +351,7 @@ nav{
 ::-webkit-scrollbar-thumb{
     background: $theme-white;
     border-radius: 10px;
+    &:hover{
+        background: rgb(131, 131, 131);
+    }
 }

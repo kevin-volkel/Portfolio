@@ -69,6 +69,10 @@ nav .container-fluid {
           justify-content: space-between;
 }
 
+nav .nav-link:hover {
+  color: lightgrey !important;
+}
+
 .contact-logo {
   margin: 0;
   width: 25px;
@@ -320,18 +324,36 @@ nav .container-fluid {
       justify-content: space-around;
 }
 
-.email-input {
+.contact-container .email-input {
   margin: auto;
 }
 
-.email-input input, .email-input textarea {
+.contact-container .email-input input, .contact-container .email-input textarea {
   width: 100%;
   margin-bottom: 1rem;
 }
 
-.email-input textarea {
+.contact-container .email-input textarea {
   height: 10rem;
   resize: none;
+}
+
+.contact-container .buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 10px;
+}
+
+.contact-container .buttonContainer #send {
+  width: 100px;
+  margin: auto;
+  background-color: #131615;
+  color: #ddd;
+  border-radius: 10px;
 }
 
 .white-to-black {
@@ -355,5 +377,9 @@ nav .container-fluid {
 ::-webkit-scrollbar-thumb {
   background: #ddd;
   border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #838383;
 }
 /*# sourceMappingURL=style.css.map */
