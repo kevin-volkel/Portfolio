@@ -82,6 +82,60 @@ nav .nav-link:hover {
   margin-right: 20px;
 }
 
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  50% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  50% {
+    opacity: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  50% {
+    opacity: 100%;
+  }
+}
+
+section {
+  position: relative;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
 #landing {
   width: 100%;
   height: 100vh;
@@ -180,10 +234,6 @@ nav .nav-link:hover {
   height: 2px;
   margin-top: 1.25rem;
   margin-left: 10px;
-}
-
-#empty-space {
-  height: 4rem;
 }
 
 .skills {

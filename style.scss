@@ -13,6 +13,7 @@ $header-font: 'Merriweather', serif;
     box-sizing: border-box;
 }
 body{
+    // overflow: hidden;
     font-family: sans-serif;
     background-color: $bg-color;
     color: #ffffff;
@@ -66,6 +67,23 @@ nav{
     &:last-of-type{
         margin-right: 20px;
     }
+}
+
+@keyframes rotate{
+    100% {transform: rotate(360deg);}
+    0% {transform: rotate(0deg);}
+}
+@keyframes fadeOut{
+    50% {opacity: 0;}
+}
+@keyframes fadeIn{
+    50% {opacity: 100%;}
+}
+
+section{
+    position: relative;
+    animation-duration: 3s;
+    animation-timing-function: linear;
 }
 
 #landing{
@@ -176,9 +194,6 @@ nav{
     }
 }
 
-#empty-space{
-    height: 4rem;
-}
 .skills{
     background-color: $theme-white;
     padding-bottom: 2rem;
