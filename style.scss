@@ -144,8 +144,8 @@ section{
 
                 .flip-card-back{
                     border-radius: 125px;
-                    background-color: dodgerblue;
-                    color: white;
+                    background-color: $theme-white;
+                    color: $bg-color;
                     transform: rotateY(180deg);
                     p{
                         margin-top: 5rem;
@@ -276,7 +276,7 @@ section{
 .resume{
     font-family: $text-font;
     margin-top: 2rem;
-    margin-bottom: 4rem;
+    // margin-bottom: 4rem;
     .line{
         width: 14rem;
         height: 2px;

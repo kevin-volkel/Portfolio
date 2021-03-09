@@ -188,8 +188,8 @@ section {
 
 #landing .landing-container .flip-card .flip-card-inner .flip-card-back {
   border-radius: 125px;
-  background-color: dodgerblue;
-  color: white;
+  background-color: #ddd;
+  color: #131615;
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
@@ -303,7 +303,6 @@ section {
 .resume {
   font-family: "Recursive", sans-serif;
   margin-top: 2rem;
-  margin-bottom: 4rem;
 }
 
 .resume .line {
