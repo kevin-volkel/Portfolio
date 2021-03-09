@@ -82,22 +82,26 @@ nav .nav-link:hover {
   margin-right: 20px;
 }
 
-@-webkit-keyframes slideOut {
-  100% {
-    right: 100vw;
+@-webkit-keyframes slideAway {
+  from {
+    left: 0rem;
+  }
+  to {
+    left: 100vw;
   }
 }
 
-@keyframes slideOut {
-  100% {
-    right: 100vw;
+@keyframes slideAway {
+  from {
+    left: 0rem;
+  }
+  to {
+    left: 100vw;
   }
 }
 
 section {
   position: relative;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
   margin-top: 4rem;
@@ -146,15 +150,60 @@ section {
   padding: 0 15px;
 }
 
-#landing .landing-container .picture {
+#landing .landing-container .flip-card {
   width: 250px;
   height: 250px;
   border-radius: 125px;
-  background-color: white;
+  background: transparent;
   border: 5px #131615 solid;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
 }
 
-#landing .landing-container .picture img {
+#landing .landing-container .flip-card .flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.6s;
+  transition: -webkit-transform 0.6s;
+  transition: transform 0.6s;
+  transition: transform 0.6s, -webkit-transform 0.6s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+#landing .landing-container .flip-card .flip-card-inner .flip-card-front, #landing .landing-container .flip-card .flip-card-inner .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+#landing .landing-container .flip-card .flip-card-inner .flip-card-front {
+  background-color: #ddd;
+  color: black;
+}
+
+#landing .landing-container .flip-card .flip-card-inner .flip-card-back {
+  border-radius: 125px;
+  background-color: dodgerblue;
+  color: white;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+#landing .landing-container .flip-card .flip-card-inner .flip-card-back p {
+  margin-top: 5rem;
+}
+
+#landing .landing-container .flip-card:hover .flip-card-inner {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+#landing .landing-container img {
   width: 250px;
   height: 250px;
   border-radius: 125px;
@@ -200,7 +249,7 @@ section {
 }
 
 .section-title .line {
-  width: 20rem;
+  width: 14vw;
   height: 2px;
   margin-top: 1.25rem;
   margin-left: 10px;
@@ -258,7 +307,7 @@ section {
 }
 
 .resume .line {
-  width: 20rem;
+  width: 14rem;
   height: 2px;
   margin-top: 1.25rem;
   margin-left: 10px;
@@ -331,14 +380,8 @@ section {
 
 .contact-container input {
   border: 2px #131615;
-}
-
-.contact-container #name {
-  border-top-left-radius: 10px;
-}
-
-.contact-container #email {
-  border-top-right-radius: 10px;
+  border-radius: 5px;
+  outline: none;
 }
 
 .contact-container .row {
@@ -356,8 +399,8 @@ section {
 }
 
 .contact-container .email-input textarea {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  outline: none;
+  border-radius: 5px;
   height: 10rem;
   resize: none;
 }

@@ -42,32 +42,29 @@ $(function(){
      $('#resume').hide();
      $('#contact').hide();
 
-     function changeSection(newSection){
-        let $activeSection = $('.active-container');
-        let $newSection = $(`#${newSection}`);
-        //Does it need to change?
-        if($activeSection[0] == $newSection[0]){
-            return false;
-        }
-        //  Remove Old Section
-        console.log($activeSection)
-        $activeSection.hide()
-        $activeSection.removeClass("active-container")
+      let delay = 0;
 
-        //  Show New Section
-        $newSection.show()
-        $newSection.addClass("active-container")
+      function changeSection(newSection){
+         let $activeSection = $('.active-container');
+         let $newSection = $(`#${newSection}`);
+         //Does it need to change?
+         if($activeSection[0] == $newSection[0]){
+               return false;
+         }
+         //  Remove Old Section
+         hideSection($activeSection);
 
-
-     }
-
-      function resetContainer(){
-        let oldContainer = $('.oldContainer')
-        oldContainer.removeClass('active-section')
-        oldContainer.hide()
-        oldContainer.css("left", "0")
-        oldContainer.removeClass('oldContainer')
-     }
+         //  Show new Section
+         setTimeout(function(){showSection($newSection)}, delay)
+      }
+      function hideSection(section){
+         section.hide()
+         section.removeClass("active-container")
+      }
+      function showSection(section){
+         section.show()
+         section.addClass("active-container")
+      }
 
      $("#contact-link").on("click", function(){changeSection('contact')})
      $("#landing-link").on("click", function(){changeSection('landing')})
