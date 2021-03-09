@@ -21,7 +21,7 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #131615 top right no-repeat;
+  background: url(https://images.pexels.com/photos/3745234/pexels-photo-3745234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) top right no-repeat;
   background-size: cover;
   left: 0;
   right: 0;
@@ -82,49 +82,15 @@ nav .nav-link:hover {
   margin-right: 20px;
 }
 
-@-webkit-keyframes rotate {
+@-webkit-keyframes slideOut {
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    right: 100vw;
   }
 }
 
-@keyframes rotate {
+@keyframes slideOut {
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-}
-
-@-webkit-keyframes fadeOut {
-  50% {
-    opacity: 0;
-  }
-}
-
-@keyframes fadeOut {
-  50% {
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes fadeIn {
-  50% {
-    opacity: 100%;
-  }
-}
-
-@keyframes fadeIn {
-  50% {
-    opacity: 100%;
+    right: 100vw;
   }
 }
 
@@ -134,19 +100,23 @@ section {
           animation-duration: 3s;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
+  margin-top: 4rem;
+  background-color: #13161596;
+}
+
+#resume {
+  margin-top: 4rem;
 }
 
 #landing {
   width: 100%;
-  height: 100vh;
-  background: url(https://images.pexels.com/photos/3745234/pexels-photo-3745234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  height: 90vh;
   background-size: cover;
   position: relative;
 }
 
 #landing::before {
   content: "";
-  background: rgba(0, 0, 0, 0.2);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -237,13 +207,8 @@ section {
 }
 
 .skills {
-  background-color: #ddd;
   padding-bottom: 2rem;
   margin-top: 1rem;
-}
-
-.skills .section-title {
-  color: #131615;
 }
 
 .skills .card {
@@ -364,9 +329,16 @@ section {
   border-radius: 13px;
 }
 
-.contact-container {
-  color: #131615;
-  background-color: #ddd;
+.contact-container input {
+  border: 2px #131615;
+}
+
+.contact-container #name {
+  border-top-left-radius: 10px;
+}
+
+.contact-container #email {
+  border-top-right-radius: 10px;
 }
 
 .contact-container .row {
@@ -384,6 +356,8 @@ section {
 }
 
 .contact-container .email-input textarea {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   height: 10rem;
   resize: none;
 }
@@ -401,8 +375,9 @@ section {
 .contact-container .buttonContainer #send {
   width: 100px;
   margin: auto;
-  background-color: #131615;
-  color: #ddd;
+  color: #131615;
+  background-color: #ddd;
+  border: none;
   border-radius: 10px;
 }
 

@@ -1,68 +1,67 @@
 $(function(){
-    $('.right-card').css("left",1500)
-    $('.left-card').css("right",1500)
-    let currCard = 1;
-    let scrollTop = 400;
+    // $('.right-card').css("left",1500)
+    // $('.left-card').css("right",1500)
+    // let currCard = 1;
+    // let scrollTop = 400;
 
-    $(window).scroll(function(){
-        if($(this).scrollTop() > scrollTop){
-            $(`.right-card${currCard}`).animate({
-                left: 0
-            }, 250)
-            $(`.left-card${currCard}`).animate({
-                right: 0
-            }, 300)
-            currCard++;
-            scrollTop += 300;
-        }
-    })
+    // $(window).scroll(function(){
+    //     if($(this).scrollTop() > scrollTop){
+    //         $(`.right-card${currCard}`).animate({
+    //             left: 0
+    //         }, 250)
+    //         $(`.left-card${currCard}`).animate({
+    //             right: 0
+    //         }, 300)
+    //         currCard++;
+    //         scrollTop += 300;
+    //     }
+    // })
 
-    let previousScroll = 0;
-    let animating = false;
-    $(window).scroll(function(){
-        var currentScroll = $(this).scrollTop();
-        if(!animating){
-            animating = true;
-            if (currentScroll > previousScroll){
-                console.log(`down`)
-                $('nav').slideUp(500)
-            } else {
-                console.log(`up`)
-                $('nav').slideDown(500)
-            }
-            setTimeout(function(){
-                animating = false;
-            }, 500)
-        }
+    // let previousScroll = 0;
+    // let animating = false;
+    // $(window).scroll(function(){
+    //     var currentScroll = $(this).scrollTop();
+    //     if(!animating){
+    //         animating = true;
+    //         if (currentScroll > previousScroll){
+    //             console.log(`down`)
+    //             $('nav').slideUp(500)
+    //         } else {
+    //             console.log(`up`)
+    //             $('nav').slideDown(500)
+    //         }
+    //         setTimeout(function(){
+    //             animating = false;
+    //         }, 500)
+    //     }
         
-        previousScroll = currentScroll;
-     });
+    //     previousScroll = currentScroll;
+    //  });
 
-     $('.skills-container').hide();
-     $('.resume-container').hide();
-     $('.contact-container').hide();
+     $('#skills').hide();
+     $('#resume').hide();
+     $('#contact').hide();
 
      function changeSection(newSection){
-        let $activeSection = $('.active-container')[0];
-        $('.active-container').addClass('oldContainer')
+        let $activeSection = $('.active-container');
         let $newSection = $(`#${newSection}`);
         //Does it need to change?
-        if($activeSection == $newSection){
+        if($activeSection[0] == $newSection[0]){
             return false;
         }
         //  Remove Old Section
-        $activeSection.animate({
-            left: '-200rem'
-        }, 1000)
-        setTimeout(resetContainer, 1000)
+        console.log($activeSection)
+        $activeSection.hide()
+        $activeSection.removeClass("active-container")
 
         //  Show New Section
-        
+        $newSection.show()
+        $newSection.addClass("active-container")
 
 
      }
 
-     function resetContainer(){
+      function resetContainer(){
         let oldContainer = $('.oldContainer')
         oldContainer.removeClass('active-section')
         oldContainer.hide()
