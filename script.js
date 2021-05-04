@@ -42,36 +42,37 @@ $(function(){
    //      previousScroll = currentScroll;
    //   });
 
-     $('#skills').hide();
-     $('#resume').hide();
-     $('#contact').hide();
+   $('#skills').hide();
+   $('#resume').hide();
+   $('#contact').hide();
 
-      let delay = 0;
+   let delay = 0;
 
-      function changeSection(newSection){
-         let $activeSection = $('.active-container');
-         let $newSection = $(`#${newSection}`);
-         //Does it need to change?
-         if($activeSection[0] == $newSection[0]){
-               return false;
-         }
-         //  Remove Old Section
-         hideSection($activeSection);
-
-         //  Show new Section
-         setTimeout(function(){showSection($newSection)}, delay)
+   function changeSection(newSection){
+      let $activeSection = $('.active-container');
+      let $newSection = $(`#${newSection}`);
+      //Does it need to change?
+      if($activeSection[0] == $newSection[0]){
+            return false;
       }
-      function hideSection(section){
-         section.hide()
-         section.removeClass("active-container")
-      }
-      function showSection(section){
-         section.show()
-         section.addClass("active-container")
-      }
+      //  Remove Old Section
+      hideSection($activeSection);
 
-     $("#contact-link").on("click", function(){changeSection('contact')})
-     $("#landing-link").on("click", function(){changeSection('landing')})
-     $("#resume-link").on("click", function(){changeSection('resume')})
-     $("#skills-link").on("click", function(){changeSection('skills')})
+      //  Show new Section
+      setTimeout(function(){showSection($newSection)}, delay)
+   }
+   function hideSection(section){
+      section.hide()
+      section.removeClass("active-container")
+   }
+   function showSection(section){
+      section.show()
+      section.addClass("active-container")
+   }
+
+   $("#contact-link").on("click", function(){changeSection('contact')})
+   $("#landing-link").on("click", function(){changeSection('landing')})
+   $("#resume-link").on("click", function(){changeSection('resume')})
+   $("#skills-link").on("click", function(){changeSection('skills')})
+   $("#gallery-link").on("click", function(){changeSection('gallery')})
 })

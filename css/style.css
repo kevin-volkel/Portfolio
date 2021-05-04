@@ -449,4 +449,17 @@ section {
 ::-webkit-scrollbar-thumb:hover {
   background: #838383;
 }
+
+.card-body .card-title {
+  text-align: center;
+}
+
+.card-body .card-title a {
+  color: black;
+  text-decoration: none;
+}
+
+.card-body img {
+  width: 100%;
+}
 /*# sourceMappingURL=style.css.map */

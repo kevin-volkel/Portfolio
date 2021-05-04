@@ -414,3 +414,17 @@ section{
         background: rgb(131, 131, 131);
     }
 }
+
+//Gallery Styles
+.card-body{
+    .card-title{
+        text-align: center;
+        a{
+            color: black;
+            text-decoration: none;
+        }
+    }
+    img{
+        width: 100%;
+    }
+}
