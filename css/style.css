@@ -101,11 +101,11 @@ nav .nav-link:hover {
 }
 
 section {
-  position: relative;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
   margin-top: 4rem;
   background-color: #13161596;
+  position: relative;
 }
 
 #resume {
@@ -148,59 +148,7 @@ section {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 0 15px;
-}
-
-#landing .landing-container .flip-card {
-  width: 250px;
-  height: 250px;
-  border-radius: 125px;
-  background: transparent;
-  border: 5px #131615 solid;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
-}
-
-#landing .landing-container .flip-card .flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
   text-align: center;
-  -webkit-transition: -webkit-transform 0.6s;
-  transition: -webkit-transform 0.6s;
-  transition: transform 0.6s;
-  transition: transform 0.6s, -webkit-transform 0.6s;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-}
-
-#landing .landing-container .flip-card .flip-card-inner .flip-card-front, #landing .landing-container .flip-card .flip-card-inner .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-#landing .landing-container .flip-card .flip-card-inner .flip-card-front {
-  background-color: #ddd;
-  color: black;
-}
-
-#landing .landing-container .flip-card .flip-card-inner .flip-card-back {
-  border-radius: 125px;
-  background-color: #ddd;
-  color: #131615;
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-}
-
-#landing .landing-container .flip-card .flip-card-inner .flip-card-back p {
-  margin-top: 5rem;
-}
-
-#landing .landing-container .flip-card:hover .flip-card-inner {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
 }
 
 #landing .landing-container img {
@@ -255,12 +203,12 @@ section {
   margin-left: 10px;
 }
 
-.skills {
-  padding-bottom: 2rem;
+.skills-container {
+  padding-bottom: 1rem;
   margin-top: 1rem;
 }
 
-.skills .card {
+.skills-container .card {
   margin: auto;
   border: solid 10px #131615;
   border-radius: 30px;
@@ -270,12 +218,12 @@ section {
   position: relative;
 }
 
-.skills .card .val {
+.skills-container .card .val {
   color: #444;
   text-align: center;
 }
 
-.skills .card .card-link {
+.skills-container .card .card-link {
   text-decoration: none;
   color: black;
   font-weight: bold;
@@ -283,7 +231,7 @@ section {
   transition: all 0.5s;
 }
 
-.skills .card .card-link:hover {
+.skills-container .card .card-link:hover {
   color: #10ac2a;
 }
 
