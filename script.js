@@ -1,77 +1,84 @@
 $(function(){
-         //Animating the Skill Cards 
 
-   //  $('.right-card').css("left",1500)
-   //  $('.left-card').css("right",1500)
-   //  let currCard = 1;
-   //  let scrollTop = 400;
+   let sections = ['landing', 'skills', 'resume', 'contact', 'gallery']
+   let duration = 150;
 
-   //  $(window).scroll(function(){
-   //      if($(this).scrollTop() > scrollTop){
-   //          $(`.right-card${currCard}`).animate({
-   //              left: 0
-   //          }, 250)
-   //          $(`.left-card${currCard}`).animate({
-   //              right: 0
-   //          }, 300)
-   //          currCard++;
-   //          scrollTop += 300;
-   //      }
-   //  })
+   $('#skills').hide();
+   $('#resume').hide();
+   $('#contact').hide();
+   $('#gallery').hide();
 
-         // Animating the Navbar
+   let delay = 0;
 
-   //  let previousScroll = 0;
-   //  let animating = false;
-   //  $(window).scroll(function(){
-   //      var currentScroll = $(this).scrollTop();
-   //      if(!animating){
-   //          animating = true;
-   //          if (currentScroll > previousScroll){
-   //              console.log(`down`)
-   //              $('nav').slideUp(500)
-   //          } else {
-   //              console.log(`up`)
-   //              $('nav').slideDown(500)
-   //          }
-   //          setTimeout(function(){
-   //              animating = false;
-   //          }, 500)
-   //      }
-        
-   //      previousScroll = currentScroll;
-   //   });
+   const getDir = (nextSection) => {
+      let $currSection = $('.active-container')[0]
+      let $nextSection = $(`.${nextSection}`)[0]
 
-     $('#skills').hide();
-     $('#resume').hide();
-     $('#contact').hide();
-
-      let delay = 0;
-
-      function changeSection(newSection){
-         let $activeSection = $('.active-container');
-         let $newSection = $(`#${newSection}`);
-         //Does it need to change?
-         if($activeSection[0] == $newSection[0]){
-               return false;
-         }
-         //  Remove Old Section
-         hideSection($activeSection);
-
-         //  Show new Section
-         setTimeout(function(){showSection($newSection)}, delay)
+      //Determine which way to slide
+      let currIndex = 0;
+      let nextIndex = 0;
+      for(i in sections){
+         if(sections[i] == $currSection.id) currIndex = i
+         if(sections[i] == $nextSection.id) nextIndex = i
       }
-      function hideSection(section){
-         section.hide()
-         section.removeClass("active-container")
-      }
-      function showSection(section){
-         section.show()
-         section.addClass("active-container")
-      }
+      // console.log($currSection);
+      // console.log($nextSection);
+      // console.log((nextIndex - currIndex < 0) ? "left" : "right");
 
-     $("#contact-link").on("click", function(){changeSection('contact')})
-     $("#landing-link").on("click", function(){changeSection('landing')})
-     $("#resume-link").on("click", function(){changeSection('resume')})
-     $("#skills-link").on("click", function(){changeSection('skills')})
+      return (nextIndex - currIndex < 0) ? "left" : "right"
+      
+   }
+
+
+   function changeSection(newSection){
+      let $activeSection = $('.active-container');
+      let $newSection = $(`.${newSection}`);
+      //Does it need to change?
+      if($activeSection[0] == $newSection[0]) return false;
+
+      let direction = getDir(newSection)
+
+      //  Remove Old Section
+      hideSection($activeSection, direction);
+
+      //  Show new Section
+      setTimeout(() => {showSection($newSection, direction)}, duration)
+   }
+   function hideSection(section, dir){
+      if(dir == 'left'){
+         section.animate({
+            'left' : "210vh"
+         }, duration, () => {section.hide().css("left", "0")})
+      }else{
+         section.animate({
+            'right' : "210vh"
+         }, duration, () => {section.hide().css("right", "0")})
+      }
+      section.removeClass("active-container")
+   }
+   
+   function showSection(section, dir){
+      if(dir == 'left'){
+         section.show().css("left", "-210vh")
+         section.animate({
+            'left' : "0"
+         }, duration)
+      }else{
+         section.show().css("right", "-210vh")
+         section.animate({
+            'right' : "0"
+         }, duration)
+      }
+      section.addClass("active-container")
+   }
+
+   $("#contact-link").on("click", () => changeSection('contact'))
+   $("#landing-link").on("click", () => changeSection('landing'))
+   $("#resume-link").on("click", () => changeSection('resume'))
+   $("#skills-link").on("click", () => changeSection('skills'))
+   $("#gallery-link").on("click", () => changeSection('gallery'))
+
+   
+
+
 })
