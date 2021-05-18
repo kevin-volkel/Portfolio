@@ -25,18 +25,19 @@ $(function(){
       // console.log($nextSection);
       // console.log((nextIndex - currIndex < 0) ? "left" : "right");
 
-      return (nextIndex - currIndex < 0) ? "left" : "right"
+      return (nextIndex < currIndex) ? "left" : "right"
       
    }
 
 
    function changeSection(newSection){
       let $activeSection = $('.active-container');
-      let $newSection = $(`.${newSection}`);
+      let $newSection = $(`#${newSection}`);
       //Does it need to change?
       if($activeSection[0] == $newSection[0]) return false;
 
       let direction = getDir(newSection)
+      console.log(direction)
 
       //  Remove Old Section
       hideSection($activeSection, direction);
@@ -44,29 +45,34 @@ $(function(){
       //  Show new Section
       setTimeout(() => {showSection($newSection, direction)}, duration)
    }
+   function resetPos(){
+      let $activeSection = $('.active-container');
+      $activeSection.css("left", '0').css( 'right', '0')
+   }
+
    function hideSection(section, dir){
       if(dir == 'left'){
          section.animate({
-            'left' : "210vh"
-         }, duration, () => {section.hide().css("left", "0")})
+            'left' : "210vw"
+         }, duration, resetPos)
       }else{
          section.animate({
-            'right' : "210vh"
-         }, duration, () => {section.hide().css("right", "0")})
+            'right' : "210vw" 
+         }, duration, resetPos)
       }
       section.removeClass("active-container")
    }
    
    function showSection(section, dir){
       if(dir == 'left'){
-         section.show().css("left", "-210vh")
-         section.animate({
-            'left' : "0"
-         }, duration)
-      }else{
-         section.show().css("right", "-210vh")
+         section.show().css("right", "210vw")
          section.animate({
             'right' : "0"
+         }, duration)
+      }else{
+         section.show().css("left", "210vw")
+         section.animate({
+            'left' : "0"
          }, duration)
       }
       section.addClass("active-container")
