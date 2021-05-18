@@ -32,7 +32,7 @@ $(function(){
 
    function changeSection(newSection){
       let $activeSection = $('.active-container');
-      let $newSection = $(`#${newSection}`);
+      let $newSection = $(`.${newSection}`);
       //Does it need to change?
       if($activeSection[0] == $newSection[0]) return false;
 
@@ -45,20 +45,19 @@ $(function(){
       //  Show new Section
       setTimeout(() => {showSection($newSection, direction)}, duration)
    }
-   function resetPos(){
+   function resetPos (section) {
       let $activeSection = $('.active-container');
-      $activeSection.css("left", '0').css( 'right', '0')
+      $activeSection.css("left", '0', 'right', '0')
    }
-
    function hideSection(section, dir){
       if(dir == 'left'){
          section.animate({
             'left' : "210vw"
-         }, duration, resetPos)
+         }, duration, () => {section.hide().css("left", "0")})
       }else{
          section.animate({
             'right' : "210vw" 
-         }, duration, resetPos)
+         }, duration, () => {section.hide().css("right", "0")})
       }
       section.removeClass("active-container")
    }
