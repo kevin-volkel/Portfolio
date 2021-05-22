@@ -77,7 +77,6 @@ $(function(){
    $("#resume-link").on("click", () => changeSection('resume'))
    $("#skills-link").on("click", () => changeSection('skills'))
    $("#gallery-link").on("click", () => changeSection('gallery'))
-
    
 
 
