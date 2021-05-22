@@ -181,7 +181,6 @@ section{
         width: 27rem;
         margin-top: 2rem;
         color: #111;
-        position: relative;
         .val{
             color: #444;
             text-align: center;
@@ -364,5 +363,18 @@ section{
     }
     img{
         width: 100%;
+    }
+}
+
+@media only screen and (max-width: 900px){
+
+    body::before{
+        height: 120vh;
+    }
+
+    .skills-container{
+        .card-body{
+            width: 100vw;
+        }
     }
 }

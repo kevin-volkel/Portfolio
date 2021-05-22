@@ -103,13 +103,12 @@ nav .nav-link:hover {
 section {
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
   margin-top: 4rem;
   background-color: #13161596;
   position: relative;
   left: 0;
-  right: 0;
 }
 
 #resume {
@@ -218,7 +217,6 @@ section {
   width: 27rem;
   margin-top: 2rem;
   color: #111;
-  position: relative;
 }
 
 .skills-container .card .val, .gallery-container .card .val {
@@ -412,5 +410,14 @@ section {
 
 .card-body img {
   width: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+  body::before {
+    height: 120vh;
+  }
+  .skills-container .card-body {
+    width: 100vw;
+  }
 }
 /*# sourceMappingURL=style.css.map */
