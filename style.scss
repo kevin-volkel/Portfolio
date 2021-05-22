@@ -13,6 +13,7 @@ $header-font: 'Merriweather', serif;
     box-sizing: border-box;
 }
 body{
+    overflow-x: hidden;
     // overflow: hidden;
     font-family: sans-serif;
     background-color: $bg-color;
@@ -276,6 +277,23 @@ section{
         }
     }
 
+    .resume-link{
+
+        background-color:rgb(131, 131, 131);
+        border-radius: 10px;
+        border: 1px solid black;
+        text-align: center;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        width: 6rem;
+    }
+
+    a{
+        text-decoration: none;
+        width: 6rem;
+        margin: auto;
+    }
 
 }
 
@@ -373,7 +391,9 @@ section{
     }
 
     .skills-container{
-        .card-body{
+        display: flex;
+        flex-direction: column;
+        .card{
             width: 100vw;
         }
     }
