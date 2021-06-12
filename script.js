@@ -33,6 +33,8 @@ $(function(){
    function changeSection(newSection){
       let $activeSection = $('.active-container');
       let $newSection = $(`.${newSection}`);
+      $(`#${newSection}-link`).addClass('active-link')
+      $(`#${$activeSection[0].id}-link`).removeClass('active-link')
       //Does it need to change?
       if($activeSection[0] == $newSection[0]) return false;
 
