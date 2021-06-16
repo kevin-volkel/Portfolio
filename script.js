@@ -85,12 +85,17 @@ $(function(){
       section.addClass("active-container")
    }
 
+   function changeColor(e){
+      let randomColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
+      e.target.style.color = randomColor;
+   }
+
    $("#contact-link").on("click", () => changeSection('contact'))
    $("#landing-link").on("click", () => changeSection('landing'))
    $("#resume-link").on("click", () => changeSection('resume'))
    $("#skills-link").on("click", () => changeSection('skills'))
    $("#gallery-link").on("click", () => changeSection('gallery'))
-   
+   $(".name-letter").on("mouseover", changeColor)
 
 
 })

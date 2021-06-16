@@ -159,6 +159,34 @@ section {
   background-size: cover;
 }
 
+#landing #name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 64px;
+  font-family: "Merriweather", serif;
+  color: #fff;
+  -webkit-text-stroke: black 1px;
+}
+
+#landing #name .name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
 #landing::before {
   content: "";
   position: absolute;
@@ -195,14 +223,6 @@ section {
   width: 250px;
   height: 250px;
   border-radius: 125px;
-}
-
-#landing h1 {
-  margin: 0 0 10px 0;
-  font-size: 64px;
-  font-family: "Merriweather", serif;
-  color: #fff;
-  -webkit-text-stroke: black 1px;
 }
 
 #landing h2 {
@@ -397,6 +417,7 @@ section {
 }
 
 .contact-container .email-input input, .contact-container .email-input textarea {
+  padding: 0 10px;
   width: 100%;
   margin-bottom: 1rem;
 }

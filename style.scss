@@ -122,11 +122,28 @@ section{
     margin-top: 4rem;
 }
 
+
 #landing{
+    #name{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        font-size: 64px;
+        font-family: $header-font;
+        color: #fff;
+        -webkit-text-stroke: black 1px;
+    
+        .name{
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
     width: 100%;
     height: 90vh;
     background-size: cover;
-
+    
     &::before{
         content: "";
         // background: rgba(0, 0, 0, 0.2);
@@ -157,13 +174,6 @@ section{
         }
     }
 
-    h1{
-        margin: 0 0 10px 0;
-        font-size: 64px;
-        font-family: $header-font;
-        color: #fff;
-        -webkit-text-stroke: black 1px;
-    }
 
     h2{
         color: #eee;
@@ -352,6 +362,7 @@ section{
     .email-input{
         margin: auto;
         input, textarea{
+            padding: 0 10px;
             width: 100%;
             margin-bottom: 1rem;
         }
