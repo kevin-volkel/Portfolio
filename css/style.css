@@ -170,6 +170,9 @@ section {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   margin-bottom: 10px;
   font-size: 64px;
   font-family: "Merriweather", serif;
@@ -185,6 +188,12 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+
+#landing #name .name .name-letter {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  position: relative;
 }
 
 #landing::before {

@@ -128,6 +128,7 @@ section{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: baseline;
         margin-bottom: 10px;
         font-size: 64px;
         font-family: $header-font;
@@ -137,6 +138,11 @@ section{
         .name{
             display: flex;
             flex-direction: row;
+
+            .name-letter{
+                transition: all 0.5s;
+                position: relative;
+            }
         }
     }
 

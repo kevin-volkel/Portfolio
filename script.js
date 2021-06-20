@@ -85,9 +85,28 @@ $(function(){
       section.addClass("active-container")
    }
 
-   function changeColor(e){
-      let randomColor = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
-      e.target.style.color = randomColor;
+   function animateName () {
+      resetName()
+      for(let i = 1; i < 6; i++){
+         let letter = $(`.fname-letter:nth-of-type(${i})`)
+         console.log(letter);
+         letter.animate({
+            right: 0
+         }, 100 * Math.abs(i - 6))
+      }
+
+      let lnameLetters = $('.lname-letter')
+      for(let i = 1; i < 7; i++){
+         let letter = $(`.lname-letter:nth-of-type(${i})`)
+         letter.animate({
+            left: 0
+         }, 100 * i)
+      }
+   }
+
+   function resetName() {
+      $('.fname-letter').css('right', '200vw')
+      $('.lname-letter').css('left', '200vw')
    }
 
    $("#contact-link").on("click", () => changeSection('contact'))
@@ -95,7 +114,7 @@ $(function(){
    $("#resume-link").on("click", () => changeSection('resume'))
    $("#skills-link").on("click", () => changeSection('skills'))
    $("#gallery-link").on("click", () => changeSection('gallery'))
-   $(".name-letter").on("mouseover", changeColor)
+   animateName()
 
 
 })
