@@ -95,7 +95,6 @@ $(function(){
          }, 100 * Math.abs(i - 6))
       }
 
-      let lnameLetters = $('.lname-letter')
       for(let i = 1; i < 7; i++){
          let letter = $(`.lname-letter:nth-of-type(${i})`)
          letter.animate({
