@@ -108,12 +108,21 @@ $(function(){
       $('.lname-letter').css('left', '200vw')
    }
 
+   function reanimateName(e) {
+      if(e.key == ' '){
+         if($('.active-container')[0] == document.getElementById('landing')){
+            resetName()
+            setTimeout(animateName, 400)
+         }
+      }
+   }
+
    $("#contact-link").on("click", () => changeSection('contact'))
    $("#landing-link").on("click", () => changeSection('landing'))
    $("#resume-link").on("click", () => changeSection('resume'))
    $("#skills-link").on("click", () => changeSection('skills'))
    $("#gallery-link").on("click", () => changeSection('gallery'))
    animateName()
-
+   window.addEventListener('keydown', reanimateName)
 
 })
