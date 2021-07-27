@@ -122,7 +122,12 @@ $(function(){
    $("#resume-link").on("click", () => changeSection('resume'))
    $("#skills-link").on("click", () => changeSection('skills'))
    $("#gallery-link").on("click", () => changeSection('gallery'))
+   
    animateName()
    window.addEventListener('keydown', reanimateName)
 
+   //create a random rgb color whenever a new section is shown
+   function newColor () {
+      return `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
+   }
 })
