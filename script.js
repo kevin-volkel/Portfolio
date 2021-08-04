@@ -33,6 +33,8 @@ $(function(){
    function changeSection(newSection){
       let $activeSection = $('.active-container');
       let $newSection = $(`.${newSection}`);
+      $(`#${newSection}-link`).addClass('active-link')
+      $(`#${$activeSection[0].id}-link`).removeClass('active-link')
       //Does it need to change?
       if($activeSection[0] == $newSection[0]) return false;
 
@@ -83,13 +85,49 @@ $(function(){
       section.addClass("active-container")
    }
 
+   function animateName () {
+      resetName()
+      for(let i = 1; i < 6; i++){
+         let letter = $(`.fname-letter:nth-of-type(${i})`)
+         console.log(letter);
+         letter.animate({
+            right: 0
+         }, 100 * Math.abs(i - 6))
+      }
+
+      for(let i = 1; i < 7; i++){
+         let letter = $(`.lname-letter:nth-of-type(${i})`)
+         letter.animate({
+            left: 0
+         }, 100 * i)
+      }
+   }
+
+   function resetName() {
+      $('.fname-letter').css('right', '200vw')
+      $('.lname-letter').css('left', '200vw')
+   }
+
+   function reanimateName(e) {
+      if(e.key == ' '){
+         if($('.active-container')[0] == document.getElementById('landing')){
+            resetName()
+            setTimeout(animateName, 400)
+         }
+      }
+   }
+
    $("#contact-link").on("click", () => changeSection('contact'))
    $("#landing-link").on("click", () => changeSection('landing'))
    $("#resume-link").on("click", () => changeSection('resume'))
    $("#skills-link").on("click", () => changeSection('skills'))
    $("#gallery-link").on("click", () => changeSection('gallery'))
-
    
+   animateName()
+   window.addEventListener('keydown', reanimateName)
 
-
+   //create a random rgb color whenever a new section is shown
+   function newColor () {
+      return `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`
+   }
 })

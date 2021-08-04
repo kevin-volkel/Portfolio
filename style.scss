@@ -12,7 +12,17 @@ $header-font: 'Merriweather', serif;
     padding: 0;
     box-sizing: border-box;
 }
+.transparent{
+    background-color: #13161596;
+    height: 105vh;
+    width: 101vw;
+    position: fixed;
+    top: 0px;
+    left: 0;
+
+}
 body{
+    overflow-x: hidden;
     // overflow: hidden;
     font-family: sans-serif;
     background-color: $bg-color;
@@ -24,8 +34,10 @@ body{
     &::before{
         content: "";
         position: fixed;
-        background: url(https://images.pexels.com/photos/3745234/pexels-photo-3745234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) top right no-repeat; //can place a url to an image
-        background-size: cover;
+        // background: url(https://images.pexels.com/photos/3745234/pexels-photo-3745234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) top right no-repeat; //can place a url to an image
+        // background-size: cover;
+        background-color: #000000;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='898' height='107.8' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23b8b8b8' stroke-width='1.9' stroke-opacity='0.66'%3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
         left: 0;
         right: 0;
         top: 0;
@@ -55,8 +67,31 @@ nav{
         justify-content: space-between;
     }
 
-    .nav-link:hover{
-        color: lightgrey!important;
+    .nav-link{
+        display: block;
+        position: relative;
+        padding: 0.2rem 0;
+        overflow: hidden;
+
+        &::after{
+            opacity: 1;
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -2px;
+            width: 98%;
+            height: 0.1rem;
+            border-radius: 0.1rem;
+            background-color: rgba(250, 250, 250, 0.363);
+            transition: opacity 300ms, transform 600ms;
+            transform: scale(0);
+            transform-origin: center;
+        }
+
+        &:hover::after, &:focus::after, &.active-link::after{
+            transform: scale(1)
+        }
+
     }
 }
 
@@ -79,19 +114,42 @@ section{
     animation-timing-function: linear;
     transition: all 0.5s;
     margin-top: 4rem;
-    background-color: #13161596;
     position: relative;
+    top: 0;
     left: 0;
 }
 #resume{
     margin-top: 4rem;
 }
 
+
 #landing{
+    #name{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 10px;
+        font-size: 64px;
+        font-family: $header-font;
+        color: #fff;
+        -webkit-text-stroke: black 1px;
+    
+        .name{
+            display: flex;
+            flex-direction: row;
+
+            .name-letter{
+                transition: all 0.5s;
+                position: relative;
+            }
+        }
+    }
+
     width: 100%;
     height: 90vh;
     background-size: cover;
-
+    
     &::before{
         content: "";
         // background: rgba(0, 0, 0, 0.2);
@@ -122,13 +180,6 @@ section{
         }
     }
 
-    h1{
-        margin: 0 0 10px 0;
-        font-size: 64px;
-        font-family: $header-font;
-        color: #fff;
-        -webkit-text-stroke: black 1px;
-    }
 
     h2{
         color: #eee;
@@ -181,7 +232,6 @@ section{
         width: 27rem;
         margin-top: 2rem;
         color: #111;
-        position: relative;
         .val{
             color: #444;
             text-align: center;
@@ -277,6 +327,23 @@ section{
         }
     }
 
+    .resume-link{
+
+        background-color:rgb(131, 131, 131);
+        border-radius: 10px;
+        border: 1px solid black;
+        text-align: center;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        width: 6rem;
+    }
+
+    a{
+        text-decoration: none;
+        width: 6rem;
+        margin: auto;
+    }
 
 }
 
@@ -301,6 +368,7 @@ section{
     .email-input{
         margin: auto;
         input, textarea{
+            padding: 0 10px;
             width: 100%;
             margin-bottom: 1rem;
         }
@@ -364,5 +432,20 @@ section{
     }
     img{
         width: 100%;
+    }
+}
+
+@media only screen and (max-width: 900px){
+
+    body::before{
+        height: 120vh;
+    }
+
+    .skills-container{
+        display: flex;
+        flex-direction: column;
+        .card{
+            width: 100vw;
+        }
     }
 }
