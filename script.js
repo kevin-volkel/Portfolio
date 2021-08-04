@@ -3,7 +3,7 @@ $(function(){
    let sections = ['landing', 'skills', 'resume', 'contact', 'gallery']
    let duration = 100;
 
-   $('#skills').hide();
+   $  
    $('#resume').hide();
    $('#contact').hide();
    $('#gallery').hide();
