@@ -122,8 +122,6 @@ $(function () {
   $("#gallery-link").on("click", () => changeSection("gallery"));
   $("#filter").on("change", filterGallery);
 
-  changeSection("gallery");
-
   animateName();
   window.addEventListener("keydown", reanimateName);
 });
